@@ -2,12 +2,13 @@ package com.zjf.behaviordemo.behavior;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
+
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 /**
  * Created by zjf on 2019-04-22.

@@ -2,13 +2,14 @@ package com.zjf.behaviordemo.behavior;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.math.MathUtils;
-import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.OverScroller;
+
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.math.MathUtils;
+import androidx.core.view.ViewCompat;
 
 /**
  * Created by zjf on 2019-04-22.

@@ -6,13 +6,14 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.custom_layout);
 
         RecyclerView mRecyclerView = findViewById(R.id.recycleView);
 
@@ -34,14 +35,14 @@ public class MainActivity extends Activity {
         mRecyclerView.setAdapter(adapter);
 
         List<String> datas = new ArrayList<>();
-        for (int i = 0; i < 15; i++) {
-            datas.add("item"+i);
+        for (int i = 0; i < 100; i++) {
+            datas.add("item" + i);
         }
 
         adapter.setData(datas);
     }
 
-    class MyItemDecoration extends RecyclerView.ItemDecoration{
+    static class MyItemDecoration extends RecyclerView.ItemDecoration {
 
         @Override
         public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
@@ -61,7 +62,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
+    static class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
         private int[] mColors;
         private List<String> mData;
@@ -72,15 +73,15 @@ public class MainActivity extends Activity {
             mColors = new int[]{Color.parseColor("#33FF0000"), Color.parseColor("#3300FF00"), Color.parseColor("#330000FF")};
         }
 
-        @NonNull
+        @androidx.annotation.NonNull
         @Override
-        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
+        public MyViewHolder onCreateViewHolder(@androidx.annotation.NonNull ViewGroup viewGroup, int position) {
 
             return new MyViewHolder(mLayoutInflater.inflate(R.layout.item_layout, viewGroup, false));
         }
 
         @Override
-        public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
+        public void onBindViewHolder(@androidx.annotation.NonNull MyViewHolder holder, int i) {
 
             holder.setText(mData.get(i));
             holder.setBackgroundColor(mColors[i % 3]);
@@ -97,11 +98,11 @@ public class MainActivity extends Activity {
         }
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    static class MyViewHolder extends RecyclerView.ViewHolder {
 
         private TextView mTextView;
 
-        MyViewHolder(@NonNull View itemView) {
+        MyViewHolder(@androidx.annotation.NonNull View itemView) {
             super(itemView);
             mTextView = itemView.findViewById(R.id.item_tv);
         }

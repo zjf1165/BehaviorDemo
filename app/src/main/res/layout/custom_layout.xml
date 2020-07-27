@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.zjf.behaviordemo.NestedFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:overScrollMode="never"
-        app:layout_behavior=".behavior.TGRecycleViewBehavior" />
+        android:overScrollMode="never" />
 
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@android:color/holo_blue_bright"
-        android:gravity="center"
-        app:layout_behavior=".behavior.TGHeaderViewBehavior">
+        android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,4 +23,4 @@
             android:textColor="@android:color/white" />
     </LinearLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</com.zjf.behaviordemo.NestedFrameLayout>
